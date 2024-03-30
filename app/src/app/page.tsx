@@ -1,77 +1,51 @@
-import { Badge } from "@/components/simple/Badge";
+import { Navbar } from "@/components/composite/Navbar";
+import { Select } from "@/components/composite/Select";
 import { Button } from "@/components/simple/Button";
 import { Heading } from "@/components/simple/Heading";
 import { Input } from "@/components/simple/Input";
-import { Label } from "@/components/simple/Label";
-import { Message } from "@/components/simple/Message";
-import { SelectItem } from "@/components/simple/SelectItem";
 import { Text } from "@/components/simple/Text";
-import { Textarea } from "@/components/simple/Textarea";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <Heading className="text-red-600">Heading</Heading>
-      <Label className="text-blue-600">Label</Label>
-      <Text className="text-green-600">Text</Text>
-      <div className="w-2/5 flex flex-col items-center justify-center p-4 gap-4 ring-2 ring-red-500">
-        <Message className="text-xl" style="success">Message</Message>
-        <Message style="attention">Message</Message>
-        <Message style="danger">Message</Message>
-      </div>
-      <div className="w-2/5 flex flex-col items-center justify-center p-4 gap-4 ring-2 ring-red-500">
-        <Textarea placeholder="Placeholder" />
-        <Textarea style='secondary'placeholder="Placeholder"/>
-      </div>
-      <div className="w-2/5 flex flex-col items-center justify-center p-4 gap-4 ring-2 ring-red-500">
-        <Input placeholder="Placeholder" />
-        <Input style='secondary'placeholder="Placeholder"/>
-      </div>
-      <div className="flex flex-col items-center justify-center p-4 gap-4">
-        <Button>
-          Button
-        </Button>
-        <Button style='secondary'>Button</Button>
-        <Button style='dark'>Button</Button>
-        <Button style='transparent'>Button</Button>
-        <Button style='success'>Button</Button>
-        <Button style='attention'>Button</Button>
-        <Button style='danger'>Button</Button>
-        <Button style='primary-outline'>Button</Button>
-        <Button style='secondary-outline'>Button</Button>
-        <Button style='dark-outline'>Button</Button>
-        <Button style='success-outline'>Button</Button>
-        <Button style='attention-outline'>Button</Button>
-        <Button style='danger-outline'>Button</Button>
-      </div>
-      <div className="flex flex-col items-center justify-center p-4 gap-4">
-        <Badge>
-          Button
-        </Badge>
-        <Badge style='secondary'>Button</Badge>
-        <Badge style='dark'>Button</Badge>
-        <Badge style='transparent'>Button</Badge>
-        <Badge style='success'>Button</Badge>
-        <Badge style='attention'>Button</Badge>
-        <Badge style='danger'>Button</Badge>
-        <Badge style='primary-outline'>Button</Badge>
-        <Badge style='secondary-outline'>Button</Badge>
-        <Badge style='dark-outline'>Button</Badge>
-        <Badge style='success-outline'>Button</Badge>
-        <Badge style='attention-outline'>Button</Badge>
-        <Badge style='danger-outline'>Button</Badge>
-      </div>
-      <div className="flex flex-col items-center justify-center p-4 gap-4">
-        <SelectItem>
-          Button
-        </SelectItem>
-        <SelectItem hoverStyle='secondary'>Button</SelectItem>
-        <SelectItem hoverStyle='dark'>Button</SelectItem>
-        <SelectItem hoverStyle='transparent'>Button</SelectItem>
-        <SelectItem hoverStyle='primary-outline'>Button</SelectItem>
-        <SelectItem hoverStyle='secondary-outline'>Button</SelectItem>
-        <SelectItem hoverStyle='dark-outline'>Button</SelectItem>
-      </div>
+    <main className="flex flex-col gap-4">
+      <Navbar className="sticky top-0">
+        <Heading>LOGO</Heading>
+        <Navbar.Menu reponsive>
+          <Navbar.MenuItem style={'primary'}>
+            <Text>Item 01</Text>
+          </Navbar.MenuItem>
+          <Navbar.MenuItem style={'secondary'}>
+            <Text>Item 02</Text>
+          </Navbar.MenuItem>
+          <Navbar.MenuItem style={'dark'}>
+            <Text>Item 03</Text>
+          </Navbar.MenuItem>
+          <Navbar.MenuItem>
+            <Text>Item 04</Text>
+          </Navbar.MenuItem>
+          <Navbar.MenuItem>
+            <Text>Item 05</Text>
+          </Navbar.MenuItem>
+        </Navbar.Menu>
+        <Navbar.ResponsiveMenu>
+          <Text>Perfil</Text>
+          <Navbar.ResponsiveMenuItem>
+            <Button style={'primary'} className="py-1">
+              X
+            </Button>
+          </Navbar.ResponsiveMenuItem>
+        </Navbar.ResponsiveMenu>
+      </Navbar>
+      <div
+          className="h-[85vh] w-full bg-slate-200 flex flex-col justify-center items-center gap-4"
+      >
+        <Select style="secondary" className="w-1/2" defaultValue={"Item 02"}>
+          <Select.Item>Item 01</Select.Item>
+          <Select.Item>Item 02</Select.Item>
+          <Select.Item>Item 03</Select.Item>
+        </Select>
+        <Input placeholder="Digite seu nome" className="w-1/2" />
+      </div>      
     </main>
   );
 }

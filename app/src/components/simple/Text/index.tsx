@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
-const TextVariant = tv({
+const TextVariants = tv({
     base: 'font-normal',
     variants: {
         size: {
@@ -14,12 +14,12 @@ const TextVariant = tv({
     }
 })
 
-type TextProps = ComponentProps<'p'> & VariantProps<typeof TextVariant>
+type TextProps = ComponentProps<'p'> & VariantProps<typeof TextVariants>
 
 export function Text({ children, size='md', className, ...props }:TextProps) {
     return (
         <p
-            className={TextVariant({ size, className })}
+            className={TextVariants({ size, className })}
             {...props}
         >
             {children}

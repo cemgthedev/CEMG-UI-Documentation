@@ -2,7 +2,7 @@ import { ComponentProps } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const BadgeVariant = tv({
-    base: 'py-1 px-2 font-bold rounded-[4px] flex gap-1 justify-center items-center',
+    base: 'py-1 px-2 font-bold rounded-[4px] flex gap-1 justify-center items-center duration-150 ease-linear',
     variants: {
         style: {
             'primary': 'bg-cyan-500 text-white hover:bg-cyan-400',

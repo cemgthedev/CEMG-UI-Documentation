@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
-const LabelVariant = tv({
+const LabelVariants = tv({
     base: 'font-semibold',
     variants: {
         size: {
@@ -14,12 +14,12 @@ const LabelVariant = tv({
     }
 })
 
-type LabelProps = ComponentProps<'p'> & VariantProps<typeof LabelVariant>
+type LabelProps = ComponentProps<'p'> & VariantProps<typeof LabelVariants>
 
 export function Label({ children, size='md', className, ...props }:LabelProps) {
     return (
         <p
-            className={LabelVariant({ size, className })}
+            className={LabelVariants({ size, className })}
             {...props}
         >
             {children}

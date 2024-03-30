@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
-const MessageVariant = tv({
+const MessageVariants = tv({
     base: 'text-md font-normal',
     variants: {
         style: {
@@ -12,12 +12,12 @@ const MessageVariant = tv({
     }
 })
 
-type MessageProps = ComponentProps<'p'> & VariantProps<typeof MessageVariant>
+type MessageProps = ComponentProps<'p'> & VariantProps<typeof MessageVariants>
 
 export function Message({ children, style='success', className, ...props }:MessageProps) {
     return (
         <p
-            className={MessageVariant({ style, className })}
+            className={MessageVariants({ style, className })}
             {...props}
         >
             {children}
