@@ -1,9 +1,12 @@
+import { CustomInput } from "@/components/composite/CustomInput";
+import { CustomTextarea } from "@/components/composite/CustomTextarea";
 import { Navbar } from "@/components/composite/Navbar";
-import { Select } from "@/components/composite/Select";
 import { Button } from "@/components/simple/Button";
 import { Heading } from "@/components/simple/Heading";
 import { Input } from "@/components/simple/Input";
 import { Text } from "@/components/simple/Text";
+import { Textarea } from "@/components/simple/Textarea";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -37,14 +40,24 @@ export default function Home() {
         </Navbar.ResponsiveMenu>
       </Navbar>
       <div
-          className="h-[85vh] w-full bg-slate-200 flex flex-col justify-center items-center gap-4"
+          className="h-[85vh] w-full bg-slate-200 flex justify-center items-center gap-4"
       >
-        <Select style="secondary" className="w-1/2" defaultValue={"Item 02"}>
-          <Select.Item>Item 01</Select.Item>
-          <Select.Item>Item 02</Select.Item>
-          <Select.Item>Item 03</Select.Item>
-        </Select>
-        <Input placeholder="Digite seu nome" className="w-1/2" />
+        <Input placeholder="Digite algo..."/>
+        <CustomInput className="w-1/2" style={"secondary"}> 
+          <CustomInput.Visual>
+            <Image src="/next.svg" alt="..." width={32} height={32}/>
+          </CustomInput.Visual>
+          <CustomInput.Field id="input" placeholder="Digite algo..." />
+        </CustomInput>
+
+        <Textarea placeholder="Digite algo..."/>
+        <CustomTextarea className="w-1/2" style={"secondary"}> 
+          <CustomTextarea.Visual>
+            <Image src="/next.svg" alt="..." width={32} height={32}/>
+          </CustomTextarea.Visual>
+          <CustomTextarea.Field id="input" placeholder="Digite algo..." />
+        </CustomTextarea>
+        <Button style={'secondary'}>Teste</Button>
       </div>      
     </main>
   );

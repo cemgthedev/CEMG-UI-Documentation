@@ -14,15 +14,15 @@ const HeadingVariant = tv({
     }
 })
 
-type HeadingProps = ComponentProps<'p'> & VariantProps<typeof HeadingVariant>
+type HeadingProps = ComponentProps<'h1'> & VariantProps<typeof HeadingVariant>
 
 export function Heading({ children, size='md', className, ...props }:HeadingProps) {
     return (
-        <p
+        <h1
             className={HeadingVariant({ size, className })}
             {...props}
         >
             {children}
-        </p>
+        </h1>
     )
 }

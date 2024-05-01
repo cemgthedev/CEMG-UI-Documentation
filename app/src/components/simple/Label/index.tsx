@@ -14,15 +14,15 @@ const LabelVariants = tv({
     }
 })
 
-type LabelProps = ComponentProps<'p'> & VariantProps<typeof LabelVariants>
+type LabelProps = ComponentProps<'label'> & VariantProps<typeof LabelVariants>
 
 export function Label({ children, size='md', className, ...props }:LabelProps) {
     return (
-        <p
+        <label
             className={LabelVariants({ size, className })}
             {...props}
         >
             {children}
-        </p>
+        </label>
     )
 }
