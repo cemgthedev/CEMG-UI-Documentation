@@ -4,7 +4,7 @@ import { tv, VariantProps } from 'tailwind-variants'
 
 const SelectVariants = tv({
     slots: {
-        selectStyle: 'bg-white w-full p-2 pt-3 border-2 border-zinc-950 rounded-[4px] min-h-[44px] outline-none duration-150 ease-linear items-center',
+        selectStyle: 'bg-white w-full min-h-[44px] p-2 pt-3 border-2 border-zinc-950 rounded-[4px] outline-none duration-150 ease-linear items-center',
         selectItemStyle: 'text-zinc-950 p-2 font-bold rounded-[4px] flex gap-1 justify-center items-center w-full duration-150 ease-linear'
     },
     variants: {
