@@ -4,7 +4,7 @@ import { tv, VariantProps } from 'tailwind-variants'
 
 const CustomTextareaVariants = tv({
     slots: {
-        customTextareaStyle: 'flex items-center bg-white w-full h-fit border-2 border-zinc-950 rounded-[4px] overflow-hidden duration-150 ease-linear',
+        customTextareaStyle: 'flex items-start bg-white w-full h-fit border-2 border-zinc-950 rounded-[4px] overflow-hidden duration-150 ease-linear',
         customTextareaFieldStyle: 'p-2 bg-transparent outline-none overflow-auto w-full min-h-[44px]',
         customTextareaVisualStyle: 'p-2 w-fit h-fit'
     },
